@@ -99,7 +99,7 @@ a {
 /* Header / Hero Section */
 .hero-section {
     /* Ganti baris ini: */
-    background: url('Tampilanutama.png') no-repeat center center/cover; /* Ini adalah gambar latar belakang baru Anda */
+    background: url('tampilanutama.png') no-repeat center center/cover; /* Ini adalah gambar latar belakang baru Anda */
     /* Pastikan path 'img/Tampilanutama.jpg' sesuai dengan lokasi file Anda. */
     
     color: var(--light-text);
