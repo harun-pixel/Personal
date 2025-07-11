@@ -1,0 +1,368 @@
+/* style.css */
+
+/* General Styles */
+:root {
+    --primary-color: #FFC107; /* Bright Yellow */
+    --secondary-color: #FF5722; /* Orange/Red */
+    --whatsapp-color: #25D366; /* WhatsApp Green */
+    --dark-text: #333;
+    --light-text: #f0f0f0;
+    --bg-light: #ffffff;
+    --bg-dark: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--bg-light);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-color);
+    color: #fff;
+    border: 2px solid var(--whatsapp-color);
+    font-size: 1.1em;
+}
+
+.btn-whatsapp:hover {
+    background-color: transparent;
+    color: var(--whatsapp-color);
+}
+
+.btn-whatsapp i {
+    margin-right: 8px;
+}
+
+/* Header / Hero Section */
+.hero-section {
+    /* Ganti baris ini: */
+    background: url('Tampilanutama.png') no-repeat center center/cover; /* Ini adalah gambar latar belakang baru Anda */
+    /* Pastikan path 'img/Tampilanutama.jpg' sesuai dengan lokasi file Anda. */
+    
+    color: var(--light-text);
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Overlay for readability */
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+/* Menu / Product Section */
+.menu-section {
+    padding: 60px 0;
+    background-color: var(--bg-dark);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.product-card .description {
+    font-size: 0.95em;
+    color: #666;
+    padding: 0 20px 15px;
+}
+
+.product-card .variants,
+.product-card .toppings,
+.product-card .price-info {
+    text-align: left;
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.product-card .variants h4,
+.product-card .toppings h4,
+.product-card .price-info h4 {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.product-card .variants ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.product-card .variants ul li {
+    background-color: #ffe0b2; /* Light orange background */
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.product-card .toppings span {
+    display: block;
+    background-color: #c8e6c9; /* Light green background */
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.product-card .price-info span {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--dark-text);
+}
+
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-section h2 {
+    color: var(--dark-text);
+    margin-bottom: 20px;
+}
+
+.cta-section h2::after {
+    background-color: var(--secondary-color);
+}
+
+.cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.cta-section .contact-info {
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+}
+
+.about-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+footer .social-links {
+    margin-top: 15px;
+}
+
+footer .social-links a {
+    color: var(--light-text);
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--whatsapp-color);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design (Mobile-First approach with Media Queries) */
+
+/* Small devices (e.g., phones, up to 767px) - Handled by default styles */
+
+/* Medium devices (e.g., tablets, 768px and up) */
+@media (min-width: 768px) {
+    .hero-content h1 {
+        font-size: 4.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.8em;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (e.g., desktops, 1024px and up) */
+@media (min-width: 1024px) {
+    .hero-section {
+        min-height: 70vh;
+        padding: 150px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 5.5em;
+    }
+
+    .hero-content p {
+        font-size: 2em;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Still 2 columns, but larger gap/card size */
+    }
+
+    .btn {
+        padding: 15px 35px;
+    }
+}
